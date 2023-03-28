@@ -1,48 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import Cart from '../Cart/Cart';
-import Product from '../Product/Product';
-import './Shop.css'
+import React, { useEffect, useState } from "react";
+import { addToDb } from "../../utilities/fakedb";
+import Cart from "../Cart/Cart";
+import Product from "../Product/Product";
+import "./Shop.css";
 const Shop = () => {
-    const [products,setProducts]=useState([]) 
+  const [products, setProducts] = useState([]);
 
-    useEffect(()=>{
-        fetch('products.json')
-        .then(res=>res.json())
-        .then(products=>setProducts(products))
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((products) => setProducts(products));
+  }, []);
 
-    },[])
+  const [cart, setCart] = useState([]);
 
-    const [cart,setCart]=useState([]);
+  const handleAddToCart = (product) => {
+    const newItem = [...cart, product];
+    setCart(newItem);
+    addToDb(product.id);
+  };
 
-    const handleAddToCart=(product)=>{
-        const newItem=[...cart,product]
-        setCart(newItem)
-    }
+  return (
+    <div className="container">
+      <div className="shop-container">
+        <div className="products-container">
+          {/* Show Product Use Map */}
 
-    return (
-        <div className='container'>
-            <div className="shop-container">
-                <div className="products-container">
-
-                    
-                    {/* Show Product Use Map */}
-
-                    {
-                        products.map(product=><Product
-                            key={product.id}
-                            product={product}
-                            handleAddToCart={handleAddToCart}
-                        
-                        ></Product>)
-                    }
-
-                </div>
-                <div className="cart-container">
-                    <Cart cart={cart}></Cart>
-                </div>
-            </div>
+          {products.map((product) => (
+            <Product
+              key={product.id}
+              product={product}
+              handleAddToCart={handleAddToCart}
+            ></Product>
+          ))}
         </div>
-    );
+        <div className="cart-container">
+          <Cart cart={cart}></Cart>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Shop;
