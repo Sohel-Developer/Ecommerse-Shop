@@ -1,7 +1,9 @@
 import React from "react";
 import "./Cart.css";
-import { Link } from "react-router-dom";
-const Cart = ({ cart, handleClearCart }) => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+
+const Cart = ({ cart, handleClearCart, children }) => {
   let price = 0;
   let shipping = 0;
   let quantity = 0;
@@ -30,11 +32,10 @@ const Cart = ({ cart, handleClearCart }) => {
       <div className="btn">
         <button onClick={handleClearCart} className="clear-btn">
           Clear Cart
+          <FontAwesomeIcon className="icon" icon={faTrashCan} />
         </button>
         <br />
-        <Link to="/orders">
-          <button className="order-btn">Order Review</button>
-        </Link>
+        <button className="order-btn">{children}</button>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
-.shop-container{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-
+.shop-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
 }
-.products-container{
-    margin: 50px 0px;
-    display: grid;
-    grid-gap:50px ;
-    grid-template-columns: repeat(3 ,1fr);
+.products-container {
+  margin: 50px 0px;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.Review__Btn {
+  display: flex;
+  justify-content: space-around;
 }
