@@ -1,7 +1,7 @@
 import React from "react";
 import "./Cart.css";
 import { Link } from "react-router-dom";
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleClearCart }) => {
   let price = 0;
   let shipping = 0;
   let quantity = 0;
@@ -28,10 +28,12 @@ const Cart = ({ cart }) => {
         <h3>Grand Total: $ {grandTotal.toFixed(2)}</h3>
       </div>
       <div className="btn">
-        <button className="clear-btn">Clear Cart</button>
+        <button onClick={handleClearCart} className="clear-btn">
+          Clear Cart
+        </button>
         <br />
         <Link to="/orders">
-          <button className="order-btn">Review Order</button>
+          <button className="order-btn">Order Review</button>
         </Link>
       </div>
     </div>
