@@ -38,7 +38,7 @@ const Orders = () => {
       <div className="cart-container">
         <Cart handleClearCart={handleClearCart} cart={cart}>
           <Link className="checkOut" to="/checkout">
-            <span>CheckOut</span>
+            <span> CheckOut</span>
             <span>
               <FontAwesomeIcon icon={faCreditCard} />
             </span>

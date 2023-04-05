@@ -29,12 +29,11 @@ const Cart = ({ cart, handleClearCart, children }) => {
         <p>Tax: $ {tax.toFixed(2)}</p>
         <h3>Grand Total: $ {grandTotal.toFixed(2)}</h3>
       </div>
-      <div className="btn">
+      <div>
         <button onClick={handleClearCart} className="clear-btn">
           Clear Cart
           <FontAwesomeIcon className="icon" icon={faTrashCan} />
         </button>
-        <br />
         <button className="order-btn">{children}</button>
       </div>
     </div>
