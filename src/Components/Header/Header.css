@@ -1,17 +1,15 @@
-.header{
-    background-color: black;
-
+.header {
+  background-color: black;
 }
-.nav-container{
-
-    padding: 20px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.nav-container {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.nav-item a{
-    text-decoration: none;
-    color: #fff;
-    margin-left: 20px;
-    font-size: 18px;
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+  font-size: 18px;
 }

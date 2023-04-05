@@ -29,6 +29,19 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = (product) => {
+    /* Another Seystem Product check and quantity added */
+    /* 
+  let newCart = []
+     const exists = cart.find(pd=>pd.id===product.id)
+    if (!exists) {
+        product.quantity=1
+        newCart=[...cart,product]
+    }else{
+        exists.quantity=exists.quantity+1;
+        const remaining = cart.filter(pd=>pd.id!==product.id);
+        newCart=[...remaining,exists]
+    } */
+
     const newItem = [...cart, product];
     setCart(newItem);
     addToDb(product.id);
