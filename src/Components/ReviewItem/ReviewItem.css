@@ -1,0 +1,28 @@
+.review__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 571px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #95a0a7;
+  border-radius: 10px;
+}
+.review__detail {
+  display: flex;
+  align-items: center;
+}
+.review__detail > img {
+  width: 110px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+.deleteIcon {
+  cursor: pointer;
+  width: 27px;
+  height: 27px;
+  padding: 12px;
+  border-radius: 100%;
+  color: #eb5757;
+  background: rgba(235, 87, 87, 0.3);
+}
